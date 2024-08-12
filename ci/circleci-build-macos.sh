@@ -83,7 +83,8 @@ python3 -m pip install -q --user cryptography
 pyvers=$(python3 --version | awk '{ print $2 }')
 pyvers=$(echo $pyvers | sed -E 's/[\.][0-9]+$//')    # drop last .z in x.y.z
 py_dir=$(ls -d  /Users/*/Library/Python/$pyvers/bin)
-echo "export PATH=\$PATH:$py_dir" >> ~/.uploadrc
+#echo "export PATH=\$PATH:$py_dir" >> ~/.uploadrc
+echo "export PATH=\$PATH:/Users/distiller/.local/bin" >> ~/.uploadrc
 
 # Create the cached /usr/local archive
 if [ -n "$CI"  ]; then
